@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if ! ls docs/specs/*.md 1>/dev/null 2>&1; then printf 'No spec found in docs/specs/ — consider running /spec before implementing.\\n'; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

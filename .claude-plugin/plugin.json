@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "spec-driven-dev",
+  "description": "Claude Code plugin for spec-driven development workflows that generate spec, implementation plan, and task list artifacts.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jared Wagner"
+  },
+  "homepage": "https://example.com/spec-driven-dev",
+  "repository": "https://example.com/spec-driven-dev.git",
+  "license": "MIT"
+}
