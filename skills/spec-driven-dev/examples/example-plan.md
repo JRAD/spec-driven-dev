@@ -16,7 +16,7 @@ Add a server-side bulk export endpoint and extend the invoice list UI with multi
 
 ## Scope linkage
 
-Covers FR-1 through FR-7 and NFR-1 through NFR-4 from the spec. OQ-1 (cap) resolved at 100 invoices enforced server-side. OQ-2 resolved as loading spinner only. OQ-3 (audit log) deferred.
+Covers FR-1 through FR-7 and NFR-1 through NFR-2 from the spec. OQ-1 (cap) resolved at 100 invoices enforced server-side. OQ-2 resolved as loading spinner only. OQ-3 (audit log) deferred — treated as advisory for now.
 
 ## Architecture overview
 
@@ -42,17 +42,17 @@ No background jobs. No persistent storage of generated files.
 
 ## Components and files affected
 
-| Area | File / location | Change |
-|------|----------------|--------|
-| Route | `routes/admin.rb` | Add `POST /admin/invoices/export` |
-| Controller | `app/controllers/admin/invoice_export_controller` | New file |
-| Service | `app/services/invoice_export_service` | New file |
-| PDF renderer | `app/services/pdf_renderer` | No change — called as-is |
-| Invoice list view | `app/views/admin/invoices/index` | Add checkbox column, export button |
-| Invoice list JS | `app/javascript/admin/invoice_list` | Selection state, button enable/disable, fetch + download trigger |
-| Authorization | `app/policies/admin_policy` | Verify export action allowed for admin role |
-| Tests | `spec/controllers/admin/invoice_export_controller_spec` | New |
-| Tests | `spec/services/invoice_export_service_spec` | New |
+| Tag | File / location | Change |
+|-----|----------------|--------|
+| `[exists]` | `routes/admin.rb` | Add `POST /admin/invoices/export` route |
+| `[new]` | `app/controllers/admin/invoice_export_controller.rb` | Export endpoint: auth, param validation, orchestration |
+| `[new]` | `app/services/invoice_export_service.rb` | Iterates IDs, calls PDF renderer, collects results + errors |
+| `[exists]` | `app/services/pdf_renderer.rb` | No change — called as-is per invoice |
+| `[exists]` | `app/views/admin/invoices/index.html.erb` | Add checkbox column and export button to toolbar |
+| `[exists]` | `app/javascript/admin/invoice_list.js` | Selection state, button enable/disable, fetch + download trigger |
+| `[exists]` | `app/policies/admin_policy.rb` | Verify export action is allowed for admin role |
+| `[new]` | `spec/controllers/admin/invoice_export_controller_spec.rb` | Controller spec: auth, validation, response shape |
+| `[new]` | `spec/services/invoice_export_service_spec.rb` | Unit tests: happy path, partial failure, all failure |
 
 ## Interfaces and contracts
 

@@ -78,3 +78,7 @@ Reload changes during development:
 ```bash
 /reload-plugins
 ```
+
+## Hooks
+
+The guardrail hook in `hooks/hooks.json` uses bash syntax. On Windows, Claude Code must be running with a bash-compatible shell (Git Bash or WSL) for the hook to execute correctly. If hooks are not firing, check your shell configuration or remove the `hooks` entry from `plugin.json` to disable them.

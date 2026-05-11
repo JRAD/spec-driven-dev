@@ -122,12 +122,30 @@ The plan must include:
 
 ### Task list
 
-The task list must include:
-- Phases
-- Ordered tasks
-- Dependencies
-- Validation step for each task
-- Definition of done for each phase
+**Task sizing**
+- A task is too large if it spans more than one focused coding session or one PR, touches areas that can fail independently, or has a done-criteria with "and" connecting two distinct outcomes. Split it.
+- A task is too small if its validation is trivially obvious or it could be folded into an adjacent task without losing clarity. Merge it.
+- Right size: a developer sits down, completes the work, runs the validation, and knows unambiguously whether they are done.
+
+**Dependencies**
+- Every dependency must be listed explicitly. There are no implicit dependencies.
+- Tasks within the same phase must be parallelizable unless a dependency is stated. If two tasks within a phase must be sequential, either list the dependency or split them into separate phases.
+- Before finishing, ask: if a developer completed only the listed dependencies, would they have everything needed to start this task?
+
+**Validation steps**
+- Each validation step must be specific enough that a developer who did not write the task could run it without asking questions.
+- Too vague: "Tests pass." "Feature works as expected."
+- Acceptable: "Unit tests in `spec/services/export_service_spec.rb` cover happy path, partial failure, and all-failure cases — all pass." "Load `/admin/exports` as a non-admin; confirm HTTP 403."
+- Each validation should map to an acceptance criterion in the spec. A validation with no AC mapping is either unnecessary or the spec is missing an AC.
+
+**Done-criteria**
+- Done-criteria describes a state, not an activity. "Implement the export service" is an activity. "Export service passes all unit tests and is wired into the controller; no existing tests are broken" is a state.
+- Every done-criteria must be verifiable by someone other than the task author.
+
+**Phase boundaries**
+- Each phase must end with a working, testable system state. A phase that ends with "scaffolding in place but not wired up" does not count.
+- The riskiest assumption in the plan should be tested in the earliest possible phase.
+- Close every phase with a "**Phase N definition of done:**" summary that names the testable state.
 
 ## Generation rules
 

@@ -12,7 +12,14 @@ depends_on:
 
 ## Summary
 
+<!-- One or two sentences: what is being built, what existing system it touches, and what it does not change. -->
+
 ## Scope linkage
+
+<!-- List the FRs and NFRs from the spec this plan covers.
+     For each open question resolved during planning, note the resolution here.
+     Example: "OQ-1 resolved: cap set at 100 IDs enforced server-side."
+     Unresolved blocking OQs should be listed and escalated before implementation begins. -->
 
 ## Architecture overview
 
