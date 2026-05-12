@@ -10,16 +10,16 @@ depends_on:
 
 # <title> Task List
 
-## Phase 1 — <phase name>
+## Phase 1 — <phase name> `[P-001]`
 
-### Task 1.1 — <task name>
+### Task 1.1 — <task name> `[T-001]`
 - Objective: <!-- One sentence: what state does this task produce? -->
-- Dependencies: <!-- List tasks by number, or "none" -->
-- Work: <!-- What to build. Specific enough that a developer can start without asking questions. -->
-- Validation: <!-- Specific enough that a different developer could run it. Name the file, command, or check. Maps to AC-N from the spec. -->
+- Dependencies: <!-- `[T-###]` by tag, or "none" -->
+- Work: <!-- What to build. Reference [COMP-###] and [INTF-###] from the plan. Specific enough that a developer can start without asking questions. -->
+- Validation: <!-- Specific enough that a different developer could run it. Name the file, command, or check. Cite [AC-###] from the spec. Cite [RISK-###] if this task verifies a mitigation. -->
 - Done when: <!-- A state, not an activity. Verifiable by someone other than the task author. -->
 
-### Task 1.2 — <task name>
+### Task 1.2 — <task name> `[T-002]`
 - Objective:
 - Dependencies:
 - Work:
@@ -30,9 +30,9 @@ depends_on:
 
 ---
 
-## Phase 2 — <phase name>
+## Phase 2 — <phase name> `[P-002]`
 
-### Task 2.1 — <task name>
+### Task 2.1 — <task name> `[T-003]`
 - Objective:
 - Dependencies:
 - Work:

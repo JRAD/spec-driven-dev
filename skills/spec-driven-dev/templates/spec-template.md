@@ -20,8 +20,11 @@ depends_on: []
 
 ## Goals
 
-<!-- Outcomes, not features. Each goal should trace to a specific pain in the problem statement.
-     "Users can do X without Y friction" not "Add X button". Aim for 3–7. -->
+<!-- Outcomes, not features. Each goal must trace to a specific pain in the problem statement.
+     If it can't, sharpen it or remove it. More than 7 is a signal to pare back. -->
+
+- `[G-001]` ...
+- `[G-002]` ...
 
 ## Non-goals
 
@@ -36,12 +39,17 @@ depends_on: []
 
 <!-- Actor + goal + observable outcome. Cover the happy path and at least one failure or edge case. -->
 
+- `[UC-001]` ...
+- `[UC-002]` ...
+
 ## Functional requirements
 
 <!-- One observable behavior per FR. Testable and implementation-independent.
      Pattern: "When [actor] [action], the system [observable outcome]."
-     Avoid: "support", "handle", "manage" — these describe categories, not behaviors.
-     Number every FR as FR-N for traceability. -->
+     Avoid: "support", "handle", "manage" — these describe categories, not behaviors. -->
+
+- `[FR-001]` When ...
+- `[FR-002]` When ...
 
 ## Non-functional requirements
 
@@ -49,15 +57,21 @@ depends_on: []
      Pattern: "[quality attribute] ≤/≥ [threshold] under [conditions]."
      NFRs without a threshold belong in Assumptions, not here. -->
 
+- `[NFR-001]` ...
+
 ## Constraints
 
 <!-- Things that limit how you can build (not what — that's non-goals).
      Examples: must use library X, cannot introduce service Y, must be backwards-compatible with Z. -->
 
+- `[CON-001]` ...
+
 ## Assumptions
 
 <!-- Falsifiable beliefs that haven't been verified. If one is wrong, part of the spec changes.
      State as assertions: "The table component supports custom columns" not "the UI is flexible." -->
+
+- `[ASM-001]` ...
 
 ## Open questions
 
@@ -67,8 +81,14 @@ depends_on: []
      Include who can answer each question.
      Do not proceed to plan generation while blocking OQs are unresolved. -->
 
+- `[OQ-001]` `[blocking]` ... Owner: ...
+- `[OQ-002]` `[advisory]` ... Owner: ...
+
 ## Acceptance criteria
 
 <!-- Each AC: binary pass/fail, cites FR(s) it verifies by number.
      Full set must be runnable as a standalone QA checklist.
      Every FR must have at least one AC. -->
+
+- `[AC-001]` `covers [FR-###]` ...
+- `[AC-002]` `covers [FR-###]` ...

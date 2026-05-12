@@ -12,14 +12,9 @@ depends_on:
 
 ## Summary
 
-<!-- One or two sentences: what is being built, what existing system it touches, and what it does not change. -->
-
 ## Scope linkage
 
-<!-- List the FRs and NFRs from the spec this plan covers.
-     For each open question resolved during planning, note the resolution here.
-     Example: "OQ-1 resolved: cap set at 100 IDs enforced server-side."
-     Unresolved blocking OQs should be listed and escalated before implementation begins. -->
+<!-- Reference [G-###], [FR-###], [NFR-###] from the spec. Note which [OQ-###] were resolved and how, and which were deferred. -->
 
 ## Architecture overview
 
@@ -34,14 +29,28 @@ depends_on:
 ## Technology decisions
 
 <!-- Any technology decision not captured in the spec must be named here explicitly.
-     For new projects this includes stack, framework, and deployment target.
-     Format: Decision: <what was decided> | Rationale: <why> | Alternatives considered: <what was ruled out> -->
+     For new projects this includes stack, framework, and deployment target. -->
+
+| ID | Decision | Rationale | Alternatives considered |
+|----|----------|-----------|------------------------|
+| `[DEC-001]` | | | |
 
 ## Components and files affected
 
-<!-- Tag every entry: [exists] confirmed via Glob/Grep | [new] to be created | [assumed] could not be confirmed (add a note explaining why) -->
+<!-- Tag every entry: [exists] confirmed via Glob/Grep | [new] to be created | [assumed] could not be confirmed (add a note) -->
+
+| ID | Tag | File / location | Change |
+|----|-----|----------------|--------|
+| `[COMP-001]` | `[exists]` | | |
+| `[COMP-002]` | `[new]` | | |
 
 ## Interfaces and contracts
+
+<!-- Define boundaries between components before implementation starts.
+     Ambiguity at interfaces is the most common source of integration failures. -->
+
+**`[INTF-001]` — <name>**
+- ...
 
 ## Data flow
 
@@ -52,6 +61,10 @@ depends_on:
 ## Risks and mitigations
 
 <!-- Each risk: likelihood | impact | actionable mitigation (not a reassurance) -->
+
+| ID | Risk | Likelihood | Impact | Mitigation |
+|----|------|-----------|--------|-----------|
+| `[RISK-001]` | | | | |
 
 ## Delivery sequence
 

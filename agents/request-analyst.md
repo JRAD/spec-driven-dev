@@ -28,7 +28,7 @@ If the request is too short or vague to answer these, surface your open question
 
 **Problem statement** — Describe the current situation and why it is inadequate. Who is affected and how? Write it so the goals section feels inevitable. If a reader is surprised by the goals, the problem statement isn't specific enough. No solution language here.
 
-**Goals** — State outcomes, not features. "Admins can complete a bulk export in one operation" is a goal. "Add a bulk export button" is a feature. Each goal should trace to a specific pain in the problem statement. Aim for 3–7.
+**Goals** — State outcomes, not features. "Admins can complete a bulk export in one operation" is a goal. "Add a bulk export button" is a feature. Each goal should trace to a specific pain in the problem statement. If a goal can't be traced back to the problem statement, sharpen it or remove it — don't pad the list. More than 7 goals is a signal that scope is too broad or that goals have become features; pare back rather than continuing to add.
 
 **Non-goals** — Only list things a reader might reasonably assume are included given the goals. Don't pad this section.
 
@@ -52,6 +52,19 @@ Include who can answer each question.
 - Be runnable standalone — no other spec section should be needed to execute the check.
 
 Every FR must have at least one AC. An FR with no AC is either untestable or incomplete.
+
+## Reference tagging
+
+Tag every enumerable item as you write it — do not add tags in a second pass. Use `[PREFIX-###]` format, zero-padded to 3 digits, sequential within each type starting at `001`.
+
+- Goals → `[G-###]`
+- Use cases → `[UC-###]`
+- Functional requirements → `[FR-###]`
+- Non-functional requirements → `[NFR-###]`
+- Constraints → `[CON-###]`
+- Assumptions → `[ASM-###]`
+- Open questions → `[OQ-###]`
+- Acceptance criteria → `[AC-###]` with `covers [FR-###]` citation
 
 ## Self-check before finishing
 

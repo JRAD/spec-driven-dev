@@ -46,6 +46,17 @@ Order work to produce a running (even if incomplete) system at each phase bounda
 **Risks and mitigations**
 Common sources of underestimated risk: shared state, external service dependencies, schema migrations, permission boundary changes, and anything that requires coordinating two separate systems simultaneously. Each risk needs a likelihood, an impact, and an actionable mitigation — not a reassurance.
 
+## Reference tagging
+
+Tag every enumerable item as you write it — do not add tags in a second pass. Use `[PREFIX-###]` format, zero-padded to 3 digits, sequential within each type starting at `001`.
+
+- Technology decisions → `[DEC-###]`
+- Components and files → `[COMP-###]`
+- Interfaces and contracts → `[INTF-###]`
+- Risks → `[RISK-###]`
+
+In the scope linkage section, reference `[G-###]`, `[FR-###]`, `[NFR-###]`, and `[OQ-###]` tags from the spec by their IDs. In the architecture overview and data flow, use component and interface IDs where they add clarity.
+
 ## Self-check before finishing
 
 - Does every file path reference an `[exists]` or `[new]` item? Are all `[assumed]` entries explained?
