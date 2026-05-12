@@ -20,7 +20,9 @@ A task list written without understanding the plan's delivery sequence is just a
 A task is **too large** if:
 - It would require more than one focused coding session to complete, or
 - It spans multiple areas of the system that could fail independently, or
-- Its done-criteria contains the word "and" connecting two distinct outcomes.
+- Its done-criteria contains the word "and" connecting two distinct outcomes, or
+- A reviewer would need to evaluate more than one coherent concern to approve it — ask: can the reviewer state in one sentence what they're looking for? "Does this correctly implement the export endpoint?" is single scope. "Does this implement the endpoint, wire up the UI, and add the tests?" is not, or
+- Its expected diff would exceed roughly 1000 lines. This is a signal to investigate, not a hard cap — a large rename or generated file may legitimately exceed it — but high line count combined with mixed scope is a reliable indicator the task needs splitting.
 
 Split it.
 
@@ -30,7 +32,7 @@ A task is **too small** if:
 
 Merge it.
 
-The right size: a developer sits down, completes the task, runs the validation, and knows unambiguously whether they're done.
+The right size: a developer sits down, completes the task, runs the validation, and knows unambiguously whether they're done. A reviewer can evaluate the result against a single clearly-stated concern.
 
 ## Dependency discipline
 

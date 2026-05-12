@@ -124,8 +124,10 @@ The plan must include:
 
 **Task sizing**
 - A task is too large if it spans more than one focused coding session or one PR, touches areas that can fail independently, or has a done-criteria with "and" connecting two distinct outcomes. Split it.
+- A task is too large if a reviewer would need to evaluate more than one coherent concern to approve it. A useful test: can the reviewer state in one sentence what they're looking for? "Does this correctly implement the export endpoint?" is single scope. "Does this implement the endpoint, wire up the UI, and add the tests?" is not.
+- A task is too large if its expected diff would exceed roughly 1000 lines. This is a signal to split, not a hard cap — a large rename or generated file may legitimately exceed it — but if the line count is high and the scope check above also fails, the task needs to be broken up.
 - A task is too small if its validation is trivially obvious or it could be folded into an adjacent task without losing clarity. Merge it.
-- Right size: a developer sits down, completes the work, runs the validation, and knows unambiguously whether they are done.
+- Right size: a developer sits down, completes the work, runs the validation, and knows unambiguously whether they are done. A reviewer can evaluate the result against a single clearly-stated concern.
 
 **Dependencies**
 - Every dependency must be listed explicitly. There are no implicit dependencies.
