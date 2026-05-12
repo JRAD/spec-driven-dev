@@ -44,8 +44,8 @@ The spec must include all of the following sections. Quality requirements for ea
 
 **Goals**
 - State outcomes, not features. "Admins can complete a bulk export in one operation" is a goal. "Add a bulk export button" is a feature.
-- Each goal should be traceable to a specific pain in the problem statement.
-- 3–7 goals is typical. More than 7 suggests the scope is too broad or goals are too granular.
+- Each goal must trace to a specific pain in the problem statement. If it can't, sharpen it or remove it — don't pad the list.
+- More than 7 goals is a signal that scope is too broad or that goals have become features; pare back rather than continuing to add.
 
 **Non-goals**
 - A non-goal earns its place by ruling out something a reader might reasonably assume is included given the goals.
@@ -160,6 +160,37 @@ The plan must include:
   - `depends_on`
 - Keep tasks sized for one focused coding session or one PR where possible.
 - Reference templates and examples in this directory when formatting output.
+
+## Reference tagging
+
+Tag every enumerable item in generated artifacts with a stable reference ID using `[PREFIX-###]` format (zero-padded to 3 digits). The tag appears at the start of the item. Numbers are sequential within their type, starting at `001`.
+
+**Spec artifacts**
+- Goals → `[G-###]`
+- Use cases → `[UC-###]`
+- Functional requirements → `[FR-###]`
+- Non-functional requirements → `[NFR-###]`
+- Constraints → `[CON-###]`
+- Assumptions → `[ASM-###]`
+- Open questions → `[OQ-###]`
+- Acceptance criteria → `[AC-###]`
+
+**Plan artifacts**
+- Technology decisions → `[DEC-###]`
+- Components and files → `[COMP-###]`
+- Interfaces and contracts → `[INTF-###]`
+- Risks → `[RISK-###]`
+
+**Task artifacts**
+- Phases → `[P-###]` appended to the phase heading
+- Tasks → `[T-###]` appended to the task heading; sequential across the whole document, not reset per phase
+
+**Cross-artifact referencing**
+Use IDs to trace items across artifacts:
+- Plan scope linkage cites `[G-###]`, `[FR-###]`, `[NFR-###]`, and resolved `[OQ-###]` from the spec
+- Task work sections cite `[COMP-###]` and `[INTF-###]` from the plan
+- Task validation steps cite `[AC-###]` from the spec; cite `[RISK-###]` from the plan when the task verifies a mitigation
+- Task dependency fields cite `[T-###]` from the same task list
 
 ## Supporting files
 
