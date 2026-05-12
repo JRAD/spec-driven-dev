@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "jrad-plugins",
+  "description": "Jared Wagner's Claude Code plugins",
+  "owner": {
+    "name": "Jared Wagner"
+  },
+  "plugins": [
+    {
+      "name": "spec-driven-dev",
+      "description": "Claude Code plugin for spec-driven development workflows that generate spec, implementation plan, and task list artifacts.",
+      "author": {
+        "name": "Jared Wagner"
+      },
+      "category": "development",
+      "source": ".",
+      "homepage": "https://github.com/JRAD/spec-driven-dev"
+    }
+  ]
+}

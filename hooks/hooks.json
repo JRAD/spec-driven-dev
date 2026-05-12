@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "if ! ls docs/specs/*.md 1>/dev/null 2>&1; then printf 'No spec found in docs/specs/ — consider running /spec before implementing.\\n'; fi"
+            "command": "node -e \"const fs=require('fs');try{if(!fs.readdirSync('docs/specs').some(f=>f.endsWith('.md')))console.log('No spec found in docs/specs/ — consider running /spec before implementing.')}catch{console.log('No spec found in docs/specs/ — consider running /spec before implementing.')}\""
           }
         ]
       }
