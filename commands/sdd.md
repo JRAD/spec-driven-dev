@@ -78,4 +78,23 @@ Apply the task quality rules from `agents/task-decomposer.md`:
 - Make all dependencies explicit — no implicit dependencies.
 - Write validation steps specific enough that a different developer could run them without asking questions.
 
-Once written, present the task list to the user. The pipeline is complete.
+Once written, present the task list to the user. Then ask: "Reply **implement** to begin implementation, or **done** to stop here."
+
+Do not proceed to Stage 4 unless the user replies **implement**.
+
+---
+
+## Stage 4 — Implement
+
+Load the task list written in Stage 3. Then follow the behavioral rules in `agents/implementation-driver.md` to drive implementation:
+
+- Load the artifact chain by following `depends_on` frontmatter links from the task list to the plan to the spec.
+- Compute the execution batch for the current phase (tasks whose dependencies are all satisfied).
+- Implement tasks — sequentially if one task is ready, as a parallel batch if multiple are ready.
+- After each implementation, present validation steps and ask for per-task human confirmation before marking any task complete.
+- On confirmation, append ` ✓` to the task heading line and only that line.
+- Display progress after each confirmation and ask whether to proceed.
+- When the last task in a phase is confirmed, display that phase's definition-of-done before advancing.
+- Continue until all tasks are complete or the user halts.
+
+Refer to `agents/implementation-driver.md` for the full behavioral specification covering error handling, dependency cycle detection, parallel batch limits, and completion marking protocol.
