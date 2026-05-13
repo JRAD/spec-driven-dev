@@ -19,6 +19,7 @@ You generate three artifacts in sequence:
 1. Generate spec (`/spec`) → review it (`/spec-review`) → address blocking gaps → proceed.
 2. Generate plan (`/plan`) → review it (`/plan-review`) → address blocking gaps → proceed.
 3. Generate task list (`/tasks`).
+4. Implement the project (`/implement`) → follow task list, implement work, validate, mark tasks complete.
 
 - Do not create a plan until the spec is concrete enough and `/spec-review` returns *ready for planning* or *ready with caveats* you accept.
 - Do not create a task list until the plan is reviewed and `/plan-review` returns *ready for task decomposition*.
@@ -30,6 +31,7 @@ You generate three artifacts in sequence:
 - Specs: `docs/specs/<slug>-spec.md`
 - Plans: `docs/plans/<slug>-plan.md`
 - Tasks: `docs/tasks/<slug>-tasks.md`
+- Task progress: in-file ` ✓` markers on task headings in the task list file
 
 ## Quality rules
 
