@@ -48,7 +48,7 @@ Common sources of underestimated risk: shared state, external service dependenci
 
 ## Reference tagging
 
-Tag every enumerable item as you write it — do not add tags in a second pass. Use `[PREFIX-###]` format, zero-padded to 3 digits, sequential within each type starting at `001`.
+Tag every enumerable item as you write it — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. This agent produces:
 
 - Technology decisions → `[DEC-###]`
 - Components and files → `[COMP-###]`

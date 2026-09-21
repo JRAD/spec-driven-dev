@@ -32,7 +32,7 @@ Do not generate a spec until the answers to these questions are clear. If the us
 
 ## Stage 1 — Generate the spec
 
-Use the `spec-driven-dev` skill and `skills/spec-driven-dev/templates/spec-template.md` to generate a specification. Write it to `docs/specs/<slug>-spec.md`.
+Invoke the `spec-driven-dev:request-analyst` agent (via the Agent tool) to generate a specification for this request. Pass the agent a prompt that includes: the request, the requirement to write the output to `docs/specs/<slug>-spec.md` using the shape of `skills/spec-driven-dev/templates/spec-template.md`, and the requirement to list any required assumptions explicitly. If the agent invocation fails or the agent reports it cannot proceed, report that failure and stop rather than drafting the spec directly.
 
 Once written, surface the spec to the user. Then run an internal spec review — evaluate it against the quality rules in `SKILL.md`:
 - Are there FRs missing or untestable?
@@ -51,9 +51,7 @@ Do not proceed to Stage 2 until the user approves. If they provide feedback, rev
 
 ## Stage 2 — Generate the plan
 
-Use the `spec-driven-dev` skill and `skills/spec-driven-dev/templates/plan-template.md` to generate an implementation plan. Write it to `docs/plans/<slug>-plan.md`. The plan's `depends_on` frontmatter must reference the spec from Stage 1.
-
-Before writing: run Glob and Grep to determine whether a codebase exists. Ground every component reference in a real path, or tag it `[new]` or `[assumed]` with explanation. Do not invent file paths.
+Invoke the `spec-driven-dev:implementation-architect` agent (via the Agent tool) to generate an implementation plan from the spec written in Stage 1. Pass the agent a prompt that includes: the spec path, the requirement to explore the codebase (or identify greenfield decisions) before designing, per the agent's own instructions, and the requirement to write the output to `docs/plans/<slug>-plan.md` using the shape of `skills/spec-driven-dev/templates/plan-template.md`, tagging every "Components and files affected" entry `[exists]`, `[new]`, or `[assumed]`. The plan's `depends_on` frontmatter must reference the spec from Stage 1. If the agent invocation fails or the agent reports it cannot proceed, report that failure and stop rather than drafting the plan directly.
 
 Once written, run an internal plan review:
 - Verify `[exists]` file references via Glob.
@@ -71,12 +69,7 @@ Do not proceed to Stage 3 until the user approves. If they provide feedback, rev
 
 ## Stage 3 — Generate the task list
 
-Use the `spec-driven-dev` skill and `skills/spec-driven-dev/templates/tasks-template.md` to generate a task list. Write it to `docs/tasks/<slug>-tasks.md`. The task list's `depends_on` frontmatter must reference the plan from Stage 2.
-
-Apply the task quality rules from `agents/task-decomposer.md`:
-- Size each task to one focused coding session or one PR.
-- Make all dependencies explicit — no implicit dependencies.
-- Write validation steps specific enough that a different developer could run them without asking questions.
+Invoke the `spec-driven-dev:task-decomposer` agent (via the Agent tool) to generate a task list from the plan written in Stage 2. Pass the agent a prompt that includes: the plan path, the requirement to also read the plan's source spec (via its `depends_on` frontmatter) to extract acceptance criteria for validation-step mapping, and the requirement to write the output to `docs/tasks/<slug>-tasks.md` using the shape of `skills/spec-driven-dev/templates/tasks-template.md`. The task list's `depends_on` frontmatter must reference the plan from Stage 2. If the agent invocation fails or the agent reports it cannot proceed, report that failure and stop rather than drafting the task list directly.
 
 Once written, present the task list to the user. Then ask: "Reply **implement** to begin implementation, or **done** to stop here."
 

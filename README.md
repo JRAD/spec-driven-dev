@@ -81,4 +81,7 @@ Reload changes during development:
 
 ## Hooks
 
-The guardrail hook in `hooks/hooks.json` uses Node.js, so it works on Windows, macOS, and Linux without any shell configuration. Node.js must be available on your PATH.
+`hooks/hooks.json` defines two hooks. Both use Node.js, so they work on Windows, macOS, and Linux without any shell configuration — Node.js must be available on your PATH.
+
+- **Spec guardrail (`PreToolUse`)** — prints a reminder before a `Write`/`Edit`/`MultiEdit` if `docs/specs/` contains no spec file yet. It only checks whether *any* spec exists anywhere in the project, not whether one exists for the specific feature being touched — so it fires once, early in a project's life, and goes silent for good as soon as a first spec is written. It is not a per-feature check.
+- **Consistency check (`PostToolUse`)** — runs `scripts/check-consistency.js` after every `Write`/`Edit`/`MultiEdit`. It checks that the reference-tag format documented in `agents/implementation-driver.md` still matches what `templates/tasks-template.md` and `examples/example-tasks.md` actually produce, and that `commands/spec.md`, `plan.md`, and `tasks.md` still each reference their corresponding specialist agent. It is advisory only — it always exits `0` and reports `PASS`/`FAIL` via stdout, so it never blocks the edit that triggered it.

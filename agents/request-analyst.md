@@ -55,7 +55,7 @@ Every FR must have at least one AC. An FR with no AC is either untestable or inc
 
 ## Reference tagging
 
-Tag every enumerable item as you write it — do not add tags in a second pass. Use `[PREFIX-###]` format, zero-padded to 3 digits, sequential within each type starting at `001`.
+Tag every enumerable item as you write it — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. This agent produces:
 
 - Goals → `[G-###]`
 - Use cases → `[UC-###]`

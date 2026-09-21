@@ -1,0 +1,10 @@
+.DS_Store
+
+# Throwaway test/validation artifacts from exercising /spec, /plan, /tasks, /sdd
+docs/specs/city-time-weather-lookup-spec.md
+docs/plans/city-time-weather-lookup-plan.md
+docs/tasks/city-time-weather-lookup-tasks.md
+docs/specs/mood-based-color-scheme-picker-spec.md
+docs/plans/mood-based-color-scheme-picker-plan.md
+docs/tasks/mood-based-color-scheme-picker-tasks.md
+docs/specs/unit-converter-spec.md
