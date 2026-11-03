@@ -16,7 +16,7 @@ Add a server-side bulk export endpoint and extend the invoice list UI with multi
 
 ## Scope linkage
 
-Covers `[FR-001]`–`[FR-007]` and `[NFR-001]`–`[NFR-002]` from the spec. Goals addressed: `[G-001]`, `[G-002]`, `[G-003]`.
+Covers `[FR-001]`–`[FR-007]` and `[NFR-001]`–`[NFR-002]` from the spec.
 
 Resolved open questions:
 - `[OQ-001]` cap set at 100 invoices, enforced server-side
@@ -42,7 +42,7 @@ Browser (invoice list page)
   ZipBuilder (in-memory, per [CON-004])
         │  streams ZIP back as application/zip response ([FR-004], [FR-005])
         ▼
-  Browser downloads file ([FR-003], [G-002])
+  Browser downloads file ([FR-003])
 ```
 
 No background jobs (per `[CON-002]`). No persistent storage of generated files (per `[CON-004]`).

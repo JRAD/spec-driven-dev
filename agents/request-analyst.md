@@ -55,14 +55,11 @@ Every FR must have at least one AC. An FR with no AC is either untestable or inc
 
 ## Reference tagging
 
-Tag every enumerable item as you write it — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. This agent produces:
+Tag the items that later artifacts cite, as you write them — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. Goals, use cases, and assumptions are not tagged. This agent produces:
 
-- Goals → `[G-###]`
-- Use cases → `[UC-###]`
 - Functional requirements → `[FR-###]`
 - Non-functional requirements → `[NFR-###]`
 - Constraints → `[CON-###]`
-- Assumptions → `[ASM-###]`
 - Open questions → `[OQ-###]`
 - Acceptance criteria → `[AC-###]` with `covers [FR-###]` citation
 
@@ -72,4 +69,4 @@ Tag every enumerable item as you write it — do not add tags in a second pass. 
 - Does each NFR have a threshold and conditions?
 - Does each AC cite at least one FR, and does every FR have at least one AC?
 - Are all blocking open questions identified and classified?
-- Could a developer read this spec and know what to build — without asking you anything?
+- Could a developer read this spec and know what to build — without asking you anything?

@@ -1,7 +1,6 @@
 ---
 description: Create an implementation plan from a specification, grounded in the existing codebase or in explicit decisions for new projects.
 argument-hint: [spec path]
-disable-model-invocation: true
 allowed-tools: Read Write Edit MultiEdit Glob Grep Bash(ls *) Bash(find *) Bash(mkdir *) Agent
 ---
 

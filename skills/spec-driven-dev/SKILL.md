@@ -1,14 +1,27 @@
 ---
 name: spec-driven-dev
-description: Generate and maintain spec-driven development artifacts. Use when the user wants a specification, implementation plan, or task list for a feature, project, plugin, or workflow.
+description: Plan work before building it, at the weight the work deserves. Quick tier (one-page brief) for small or single-concern changes and for settling decisions; full tier (spec, plan, task list) for large, ambiguous, multi-session, or multi-person work. Skip for trivial changes. Use via /sdd, which triages.
 argument-hint: [request or artifact path]
-disable-model-invocation: true
 allowed-tools: Read Write Edit MultiEdit Glob Grep Bash(mkdir *) Bash(ls *) Bash(find *)
 ---
 
 # Spec-driven development workflow
 
-You generate three artifacts in sequence:
+## Tiers
+
+Pick the lightest tier that gets the people involved aligned. `/sdd` does this triage; it can also be invoked by name.
+
+| Tier | Use when | Output |
+|---|---|---|
+| **None** | Trivial or obvious change: a bug fix with a known cause, a rename, a config tweak. | Just do it. |
+| **Quick** (`/brief`) | One coherent concern, or several small pieces; low ambiguity; a human should see the approach before code exists; or the real work is settling decisions and contracts so other work can start. | One file: `docs/briefs/<slug>-brief.md`. No IDs, no separate plan. |
+| **Full** (`/spec`, `/plan`, `/tasks`) | Large or ambiguous scope, blocking open questions, work spanning sessions or people, or a need for traceable requirements and a driven implementation loop. | Three linked artifacts, tagged for cross-reference. |
+
+Escalate from quick to full when a brief surfaces several blocking questions or its scope outgrows one page. The brief becomes the source request for the spec.
+
+## Full-tier workflow
+
+The full tier generates three artifacts in sequence:
 
 1. Specification: what we are building.
 2. Implementation plan: how we will build it.
@@ -28,6 +41,7 @@ You generate three artifacts in sequence:
 
 ## Output locations
 
+- Briefs (quick tier): `docs/briefs/<slug>-brief.md`
 - Specs: `docs/specs/<slug>-spec.md`
 - Plans: `docs/plans/<slug>-plan.md`
 - Tasks: `docs/tasks/<slug>-tasks.md`
@@ -167,20 +181,16 @@ The plan must include:
 
 ## Reference tagging
 
-Tag every enumerable item in generated artifacts with a stable reference ID using `[PREFIX-###]` format (zero-padded to 3 digits). The tag appears at the start of the item. Numbers are sequential within their type, starting at `001`.
+Tag the items that another artifact or a tool cites with a stable reference ID using `[PREFIX-###]` format (zero-padded to 3 digits). The tag appears at the start of the item. Numbers are sequential within their type, starting at `001`. Do not tag items nothing references (goals, use cases, assumptions, technology decisions): tags exist to connect the spec, plan, and task list, not to decorate. Single-file briefs (see "Tiers") use no tags.
 
 **Spec artifacts**
-- Goals → `[G-###]`
-- Use cases → `[UC-###]`
 - Functional requirements → `[FR-###]`
 - Non-functional requirements → `[NFR-###]`
 - Constraints → `[CON-###]`
-- Assumptions → `[ASM-###]`
 - Open questions → `[OQ-###]`
 - Acceptance criteria → `[AC-###]`
 
 **Plan artifacts**
-- Technology decisions → `[DEC-###]`
 - Components and files → `[COMP-###]`
 - Interfaces and contracts → `[INTF-###]`
 - Risks → `[RISK-###]`
@@ -191,12 +201,12 @@ Tag every enumerable item in generated artifacts with a stable reference ID usin
 
 **Cross-artifact referencing**
 Use IDs to trace items across artifacts:
-- Plan scope linkage cites `[G-###]`, `[FR-###]`, `[NFR-###]`, and resolved `[OQ-###]` from the spec
+- Plan scope linkage cites `[FR-###]`, `[NFR-###]`, `[CON-###]`, and resolved `[OQ-###]` from the spec
 - Task work sections cite `[COMP-###]` and `[INTF-###]` from the plan
 - Task validation steps cite `[AC-###]` from the spec; cite `[RISK-###]` from the plan when the task verifies a mitigation
 - Task dependency fields cite `[T-###]` from the same task list
 
 ## Supporting files
 
-- Templates: [templates/spec-template.md](templates/spec-template.md), [templates/plan-template.md](templates/plan-template.md), [templates/tasks-template.md](templates/tasks-template.md)
-- Examples: [examples/example-spec.md](examples/example-spec.md), [examples/example-plan.md](examples/example-plan.md), [examples/example-tasks.md](examples/example-tasks.md)
+- Templates: [templates/brief-template.md](templates/brief-template.md), [templates/spec-template.md](templates/spec-template.md), [templates/plan-template.md](templates/plan-template.md), [templates/tasks-template.md](templates/tasks-template.md)
+- Examples: [examples/example-spec.md](examples/example-spec.md), [examples/example-plan.md](examples/example-plan.md), [examples/example-tasks.md](examples/example-tasks.md)

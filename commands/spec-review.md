@@ -1,7 +1,6 @@
 ---
 description: Critique an existing spec against quality heuristics and return a readiness verdict.
 argument-hint: [path to spec file]
-disable-model-invocation: true
 allowed-tools: Read Glob Grep
 ---
 

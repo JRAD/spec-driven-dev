@@ -1,7 +1,6 @@
 ---
 description: Create a specification markdown artifact from a raw request.
 argument-hint: [feature request]
-disable-model-invocation: true
 allowed-tools: Read Write Edit MultiEdit Glob Grep Bash(mkdir *) Bash(ls *) Agent
 ---
 

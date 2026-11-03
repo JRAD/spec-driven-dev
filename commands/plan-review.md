@@ -1,7 +1,6 @@
 ---
 description: Critique an existing implementation plan and return a readiness verdict.
 argument-hint: [path to plan file]
-disable-model-invocation: true
 allowed-tools: Read Glob Grep
 ---
 

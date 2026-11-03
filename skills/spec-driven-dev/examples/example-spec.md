@@ -19,9 +19,9 @@ Admins export invoices one at a time today. For month-end reporting and audits, 
 
 ## Goals
 
-- `[G-001]` Admin users can export any set of invoices in a single operation instead of repeating it per invoice.
-- `[G-002]` Exports arrive as immediate file downloads without disrupting the admin's current session.
-- `[G-003]` The feature covers the realistic range of admin workloads (month-end batches, audit requests) without requiring workarounds.
+- Admin users can export any set of invoices in a single operation instead of repeating it per invoice.
+- Exports arrive as immediate file downloads without disrupting the admin's current session.
+- The feature covers the realistic range of admin workloads (month-end batches, audit requests) without requiring workarounds.
 
 ## Non-goals
 
@@ -37,9 +37,9 @@ Admins export invoices one at a time today. For month-end reporting and audits, 
 
 ## Use cases
 
-- `[UC-001]` An admin selects 10–100 invoices via checkboxes on the invoice list page and clicks "Export selected". The browser downloads a ZIP of PDFs.
-- `[UC-002]` An admin filters invoices by date range, uses "Select all on page", and exports the filtered result.
-- `[UC-003]` One invoice in a batch fails PDF generation (e.g., missing required data). The remaining invoices export successfully and an error summary is included in the ZIP.
+- An admin selects 10–100 invoices via checkboxes on the invoice list page and clicks "Export selected". The browser downloads a ZIP of PDFs.
+- An admin filters invoices by date range, uses "Select all on page", and exports the filtered result.
+- One invoice in a batch fails PDF generation (e.g., missing required data). The remaining invoices export successfully and an error summary is included in the ZIP.
 
 ## Functional requirements
 
@@ -65,10 +65,10 @@ Admins export invoices one at a time today. For month-end reporting and audits, 
 
 ## Assumptions
 
-- `[ASM-001]` The existing invoice list table component supports adding a checkbox column without a rewrite.
-- `[ASM-002]` The admin role is already defined and enforced in existing middleware; this feature does not need to define or manage roles.
-- `[ASM-003]` The existing single-invoice PDF renderer can be called per-invoice without modification; bulk export reuses that code path.
-- `[ASM-004]` The existing app is tested against and supports current-version Chrome, Firefox, and Safari; this feature inherits that browser target.
+- The existing invoice list table component supports adding a checkbox column without a rewrite.
+- The admin role is already defined and enforced in existing middleware; this feature does not need to define or manage roles.
+- The existing single-invoice PDF renderer can be called per-invoice without modification; bulk export reuses that code path.
+- The existing app is tested against and supports current-version Chrome, Firefox, and Safari; this feature inherits that browser target.
 
 ## Open questions
 

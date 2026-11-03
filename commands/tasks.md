@@ -1,7 +1,6 @@
 ---
 description: Create a task list from an implementation plan with sized tasks, explicit dependencies, and runnable validation steps.
 argument-hint: [plan path]
-disable-model-invocation: true
 allowed-tools: Read Write Edit MultiEdit Glob Grep Bash(mkdir *) Bash(ls *) Agent
 ---
 

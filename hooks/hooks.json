@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node -e \"const fs=require('fs');try{if(!fs.readdirSync('docs/specs').some(f=>f.endsWith('.md')))console.log('No spec found in docs/specs/ — consider running /spec before implementing.')}catch{console.log('No spec found in docs/specs/ — consider running /spec before implementing.')}\""
+            "command": "node -e \"const fs=require('fs');try{const has=d=>{try{return fs.readdirSync(d).some(f=>f.endsWith('.md'))}catch{return false}};if(!has('docs/specs')&&!has('docs/briefs'))console.log('No spec or brief found in docs/ — consider running /sdd before implementing non-trivial work.')}catch{}\""
           }
         ]
       }

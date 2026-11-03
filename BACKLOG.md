@@ -100,3 +100,11 @@ Each agent file is ~10 lines and amounts to a job title plus a short bullet list
 ## 6. Make `/sdd` interactive ✓
 
 **Done.** Rewrote `commands/sdd.md` as a four-stage pipeline. Stage 0 assesses request specificity and asks for clarification if the request is underspecified. Stages 1 and 2 generate the artifact, run an internal quality review, surface blocking gaps, and require explicit user approval before proceeding. Stage 3 generates the task list. `README.md` updated with a full description of the interactive flow and a command reference table.
+
+---
+
+## 7. Quick tier, triage, and lighter full tier ✓
+
+**Done.** Added `/brief` and `templates/brief-template.md` (one-page brief centered on decisions and contracts); `/sdd` Stage 0 now triages none/quick/full with `--quick`/`--full` overrides and a promotion path to the full tier. Removed `disable-model-invocation` from everything except `/implement` (it came from a misread assumption in the original spec, and it blocked sessions from triaging into the tool). Trimmed reference tags to items that are actually cited (dropped G, UC, ASM, DEC). `SKILL.md` description now says when to use the plugin and when not to. Spec guardrail hook also accepts `docs/briefs/`.
+
+Follow-ups to consider: make the spec/plan templates' sections "omit if empty"; trial the quick tier on a real ticket group and adjust the brief template from what sessions actually keep.

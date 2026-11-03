@@ -14,7 +14,7 @@ depends_on:
 
 ## Scope linkage
 
-<!-- Reference [G-###], [FR-###], [NFR-###] from the spec. Note which [OQ-###] were resolved and how, and which were deferred. -->
+<!-- Reference [FR-###], [NFR-###] from the spec. Note which [OQ-###] were resolved and how, and which were deferred. -->
 
 ## Architecture overview
 
@@ -31,9 +31,9 @@ depends_on:
 <!-- Any technology decision not captured in the spec must be named here explicitly.
      For new projects this includes stack, framework, and deployment target. -->
 
-| ID | Decision | Rationale | Alternatives considered |
-|----|----------|-----------|------------------------|
-| `[DEC-001]` | | | |
+| Decision | Rationale | Alternatives considered |
+|----------|-----------|------------------------|
+| | | |
 
 ## Components and files affected
 

@@ -48,18 +48,17 @@ Common sources of underestimated risk: shared state, external service dependenci
 
 ## Reference tagging
 
-Tag every enumerable item as you write it — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. This agent produces:
+Tag the items that tasks cite, as you write them — do not add tags in a second pass. See `SKILL.md`'s "Reference tagging" section for the full `[PREFIX-###]` format rule. This agent produces (technology decisions are named in a table but not tagged):
 
-- Technology decisions → `[DEC-###]`
 - Components and files → `[COMP-###]`
 - Interfaces and contracts → `[INTF-###]`
 - Risks → `[RISK-###]`
 
-In the scope linkage section, reference `[G-###]`, `[FR-###]`, `[NFR-###]`, and `[OQ-###]` tags from the spec by their IDs. In the architecture overview and data flow, use component and interface IDs where they add clarity.
+In the scope linkage section, reference `[FR-###]`, `[NFR-###]`, `[CON-###]`, and `[OQ-###]` tags from the spec by their IDs. In the architecture overview and data flow, use component and interface IDs where they add clarity.
 
 ## Self-check before finishing
 
 - Does every file path reference an `[exists]` or `[new]` item? Are all `[assumed]` entries explained?
 - Is every technology decision explicit — either captured in the spec or named in the plan?
 - Does the delivery sequence produce something testable at each phase, or does it defer integration?
-- Does every risk have an actionable mitigation, not just an observation?
+- Does every risk have an actionable mitigation, not just an observation?
